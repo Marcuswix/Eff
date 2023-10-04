@@ -2,7 +2,7 @@
 @media (max-width: 576px) {
   .container {
     max-width: 540px;
-    padding-inline: 1rem;
+    padding-inline: 2rem;
     display: flex;
     color: white;
     text-align: center;
@@ -344,4 +344,142 @@ h1::after {
 .help p {
   padding-block: 0.5rem;
   font-size: 12px;
+}
+
+.search {
+  text-align: left;
+  padding-inline: 2rem;
+  background-color: #031113;
+}
+.search .content-contaier {
+  border: solid 1px white;
+  padding: 1rem;
+  width: 100%;
+  margin-block: 1rem;
+}
+.search h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.search .text-container {
+  display: block;
+}
+.search .text-container p {
+  font-size: 12px;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+}
+.search .text-container i {
+  margin-right: 2rem;
+}
+.search .text-container h6 {
+  font-weight: 700;
+}
+.search .fa-solid.fa-chart-line {
+  color: rgb(255, 130, 130);
+}
+.search .fa-solid.fa-chart-column {
+  color: rgb(90, 164, 255);
+}
+.search .fa-brands.fa-shopify {
+  color: rgb(1, 197, 76);
+  margin-right: 1.5rem;
+}
+.search .fa-brands.fa-facebook {
+  color: 0;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
+}
+.search .paid-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.strategi {
+  text-align: left;
+  padding: 2rem;
+  background-color: #031113;
+}
+.strategi h1 {
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+.strategi p {
+  font-size: 19px;
+  font-weight: 100;
+}
+.strategi #red-text {
+  color: #ff9797;
+}
+.strategi #text-center {
+  text-align: center;
+  padding-block: 2rem;
+}
+
+.world {
+  background-color: #031113;
+}
+.world p {
+  padding-block: 1rem;
+}
+.world #woman-swinging {
+  background-color: transparent;
+  width: 50%;
+  box-shadow: 0 0 20px 2px black;
+  padding-bottom: 2rem;
+}
+.world h2 {
+  font-weight: 600;
+}
+.world .image-container {
+  width: 100%;
+  position: relative;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 6px 2px #000000;
+}
+.world .image-container .text-container {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  top: 50%;
+}
+.world .image {
+  width: 100%;
+  opacity: 0.6;
+}
+
+.section-end {
+  position: relative;
+  background-color: #031113;
+}
+
+.talk {
+  background-color: white;
+  padding: 2rem;
+}
+.talk .image-container-2 {
+  position: relative;
+  width: 100%;
+}
+.talk .image-container-2 .image-talk {
+  width: 100%;
+  opacity: 0.5;
+}
+.talk .image-container-2 .text-container {
+  position: absolute;
+  bottom: 10%;
+}
+.talk .image-container-2 .text-container #play-ball {
+  border: solid 5px white;
+  padding-inline: 1rem;
+  padding-block: 0.2rem;
+  color: white;
+  font-weight: 800;
+  font-size: 16px;
+  background-color: transparent;
+}
+.talk .image-container-2 .text-container p {
+  padding-bottom: 2rem;
+  padding-inline: 1rem;
 }
