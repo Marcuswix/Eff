@@ -1,0 +1,347 @@
+@charset "UTF-8";
+@media (max-width: 576px) {
+  .container {
+    max-width: 540px;
+    padding-inline: 1rem;
+    display: flex;
+    color: white;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(to left, rgba(15, 38, 62, 0.9411764706), #071820, #031113, #071820, rgba(15, 38, 62, 0.9450980392));
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    padding-inline: 1.5rem;
+    padding-block: 0.5rem;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to left, #0F263E, #071820, #031113, #071820, #0F263E);
+  }
+  h1 {
+    font-weight: 400;
+    font-size: 34px;
+  }
+  h3 {
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+  }
+  h2 {
+    font-weight: 400;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    display: none;
+  }
+}
+@media (min-width: 1400px) {
+  .section {
+    padding-inline: 16rem;
+    padding-block: 1rem;
+  }
+  .header {
+    padding-inline: 16rem;
+    padding-block: 1rem;
+  }
+}
+.btn-main {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+}
+.btn-main .btn-store {
+  width: 100%;
+}
+
+.color-animation {
+  animation: colorChange 6s linear infinite; /* Ändra 3s till önskad animationstid */
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8392156863);
+  transition: text-shadow ease-in-out 6s;
+}
+@keyframes colorChange {
+  0% {
+    color: rgb(132, 181, 255);
+  }
+  25% {
+    color: rgb(124, 255, 124);
+  }
+  50% {
+    color: rgb(255, 216, 216);
+  }
+  75% {
+    color: rgb(255, 244, 128);
+  }
+  100% {
+    color: rgb(183, 131, 255);
+  }
+}
+@keyframes text-shadow {
+  0% {
+    color: rgb(214, 230, 253);
+  }
+  25% {
+    color: rgb(207, 255, 207);
+  }
+  50% {
+    color: rgb(255, 215, 215);
+  }
+  75% {
+    color: rgb(255, 252, 215);
+  }
+  100% {
+    color: rgb(183, 131, 255);
+  }
+}
+
+p {
+  margin-bottom: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  transition: -webkit-text-decoration ease-in-out 100ms;
+  transition: text-decoration ease-in-out 100ms;
+  transition: text-decoration ease-in-out 100ms, -webkit-text-decoration ease-in-out 100ms;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+h5 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 300;
+}
+
+h1::after {
+  content: ".";
+  color: rgb(255, 212, 20);
+  font-size: 48px;
+  line-height: 0;
+}
+
+.header {
+  background-color: rgba(0, 0, 0, 0.956);
+  color: white;
+}
+.header #logo-container {
+  width: 100px;
+}
+.header #logo {
+  width: 100%;
+  transition: transform ease-in-out 300ms;
+}
+.header #logo:hover {
+  transform: scale(1.2);
+}
+.header .get-in-touch {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  width: 200px;
+  transition: transform ease-in-out 300ms;
+  text-align: left;
+}
+.header .get-in-touch:hover {
+  transform: scale(1.2);
+}
+.header .fa-solid.fa-bars {
+  font-size: 1.5rem;
+  transition: transform ease-in-out 300ms;
+}
+.header .fa-solid.fa-bars:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.main {
+  background-color: rgb(22, 21, 41);
+  z-index: -1;
+  width: 100%;
+  height: auto;
+  color: white;
+  position: relative;
+  padding-top: 4rem;
+}
+.main #phone {
+  width: 90%;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  right: -5%;
+}
+.main #circuits {
+  width: 100%;
+  z-index: 0;
+  position: relative;
+  transform: rotate(45deg);
+  animation: wink infinite ease-in-out 3s;
+}
+@keyframes wink {
+  0% {
+    opacity: 0.6;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+.main .image-main {
+  padding-block: 3rem;
+}
+
+.simplify-optimize {
+  padding-block: 4rem;
+}
+.simplify-optimize .container {
+  padding-top: 2rem;
+}
+.simplify-optimize .mobil-circle {
+  width: 300px;
+  height: 300px;
+  border: solid 4px red;
+  animation: colorBorderChange 6s infinite;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.7764705882), inset 0 0 10px 0 rgba(255, 255, 255, 0.7058823529);
+}
+@keyframes colorBorderChange {
+  0% {
+    border-color: rgb(132, 181, 255);
+  }
+  25% {
+    border-color: rgb(124, 255, 124);
+  }
+  50% {
+    border-color: rgb(255, 130, 130);
+  }
+  75% {
+    border-color: rgb(255, 244, 128);
+  }
+  100% {
+    border-color: rgb(183, 131, 255);
+  }
+}
+.simplify-optimize #two-phones {
+  width: 90%;
+  padding-block: 2rem;
+  z-index: 1;
+}
+
+.headlines {
+  padding-bottom: 2rem;
+}
+
+.success {
+  display: block;
+  text-align: left;
+  padding-inline: 2rem;
+}
+.success a {
+  color: white;
+  text-decoration: none;
+}
+.success h2 {
+  font-weight: 400;
+  font-size: 24px;
+  padding-right: 6rem;
+  margin: 0;
+}
+.success p {
+  padding-block: 1rem;
+}
+.success .image-box {
+  position: relative;
+  padding-block: 1rem;
+  display: block;
+}
+.success .image-box img {
+  width: 100%;
+  opacity: 0.7;
+}
+.success .image-box .text-container {
+  position: absolute;
+  bottom: 5%;
+  right: 2%;
+  left: 2%;
+}
+.success .image-box .text-container h4 {
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+}
+.success .image-box .text-container p {
+  font-size: 14px;
+}
+
+.new-era {
+  padding: 2rem;
+}
+
+.download {
+  padding: 2rem;
+}
+.download .image-box {
+  width: 100%;
+}
+.download .image-box img {
+  width: 80%;
+  padding-block: 2rem;
+}
+.download p {
+  font-size: 12px;
+  padding-block: 2rem;
+}
+.download a {
+  font-weight: 800;
+}
+
+.help {
+  text-align: left;
+  padding: 2rem;
+  background-color: #031113;
+}
+.help p {
+  padding-block: 0.5rem;
+  font-size: 12px;
+}
