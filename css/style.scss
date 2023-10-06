@@ -6,7 +6,8 @@ body
 }
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) 
-{ 
+{
+    
     .container
     {
         max-width: 540px;
@@ -17,6 +18,7 @@ body
         flex-direction: column;
         align-items: center;
         position: relative;
+        padding-block: 2rem;
     }
     
     .header
@@ -24,6 +26,33 @@ body
     gap: 3rem;
     padding-inline: 1.5rem;
     padding-block: 0.5rem;
+    }
+
+    #menu
+    {
+        z-index: 3;
+        padding-block: 2rem;
+        text-align: center;
+    }
+
+    #ul-menu
+    {
+        list-style-type: none;
+        margin: 0;
+    }
+
+    li
+    {
+        font-size: 1.5rem;
+        margin-block: 0.5rem;
+        padding: 0.5rem;
+        transition: ease-in-out 120ms;
+
+        &:hover
+        {
+            background-color: #90909083;
+            box-shadow: 0 0 12px 0 #909090b4;
+        }
     }
 
     .main
@@ -37,7 +66,14 @@ body
     height: auto;
     color: rgb(255, 255, 255);
     position: relative;
-    padding-top: 3rem;
+    padding-block: 3rem;
+    }
+
+    .text-container
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .image-main
@@ -125,10 +161,12 @@ body
     {
         padding-block: 4rem;
 
+        h1::after{
+            display: none;
+        }
+
             
     }
-
-
     .mobil-circle
             {
                 bottom: 0;
@@ -136,6 +174,26 @@ body
                 width:20rem;
                 height: 20rem;
             }
+
+    #something
+    {
+        display: none;
+    }
+
+    #social
+    {
+        display: none;
+    }
+
+    #search
+    {
+        display: none;
+    }
+
+    #app
+    {
+        display: none;
+    }
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
@@ -148,6 +206,20 @@ body
         width: 100%; 
         position: fixed;
         z-index: 3;
+    }
+
+    #menu
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 2rem;
+        padding-inline: 12rem;
+        padding-block: 2rem;
+    }
+
+    #li-menu
+    {
+        display: none;
     }
 
     .container
@@ -251,6 +323,10 @@ body
                 top: 20%;
             }
         }
+
+        h1::after{
+            display: none;
+        }
     }
 
 
@@ -347,6 +423,12 @@ body
             flex-direction: column;
             align-items: center;
             padding: 0;
+            transition: transform ease-in-out 200ms;
+
+            &:hover
+            {
+                transform: scale(1.1);
+            }
 
         .image
         {
@@ -427,7 +509,6 @@ body
 }
 
 // Buttons
-
 .play-ball
 {
     border: solid 5px white;
@@ -521,6 +602,23 @@ h1::after
     line-height: 0;
 }
 
+
+#overlay 
+{
+    position: fixed;
+    inset: 0;
+    background-color: #00000042;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms;
+
+    &.show {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+
 // PAGE START
 
 //Header
@@ -576,6 +674,103 @@ h1::after
             transform:  scale(1.2) rotate(10deg);  
         }
     }
+
+    #menu {
+        background-color: #252525;
+        height: auto;
+        width: 100vw;
+        position: fixed;
+        border-radius: 1rem;
+        top: -100%;
+        left: 0; 
+        transition: top 300ms;
+
+        a{
+            text-decoration: none;
+        }
+
+
+
+        .content-contaier
+        {
+
+            .menu-headlines
+            {
+                font-size: 1.5rem;
+                font-weight: 600;
+                text-decoration: underline 2px white;
+                text-underline-offset: 10px;
+                margin-bottom: 20px;
+                position: relative;
+
+                &::after
+                {
+                    content: "";
+                    position: absolute;
+                    width: 50%;
+                    bottom: -7px; 
+                    height: 2px;
+                    background-color: #ffffff;
+                }
+            }
+
+            p
+            {
+                margin-left: 2.5rem;
+                font-size: 0.9rem; 
+            }
+
+            i{ margin-right: 1.2rem; 
+
+            }
+
+            h6{
+                font-size: 1.2rem;
+            }
+
+            .text-container
+            {
+                padding-bottom: 0.5rem;
+                transition: ease-in-out 200ms;
+
+                &:hover
+                {
+                    transform: scale(1.03);
+                }
+            }
+
+        }
+
+        
+        .paid-social
+            {
+              margin-left: 3rem;
+            }
+
+        #app
+        {
+
+            h1
+            {
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-bottom: 20px;
+            }
+        }
+
+    &.open 
+        {
+        top: 6.5%;
+        }
+      }
+
+      #toggle-menu
+      {
+        background-color: transparent;
+        border: none;
+        color: white; 
+      }
+
 }
 
 // Section 1 - "Main" 
@@ -786,7 +981,7 @@ h1::after
 {
     text-align: left;
     background-color: #031113;
-    
+
     .content-contaier
     {
         border: solid 1px white;
@@ -801,7 +996,8 @@ h1::after
         margin-bottom: 1rem;
     }
 
-    .text-container
+
+.text-container
     {
         display: block;
         transition: transform ease-in-out 300ms;
@@ -834,6 +1030,15 @@ h1::after
     
     }
 
+    .paid-social
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+    
+
     .fa-solid.fa-chart-line
     {
         color: rgb(255, 130, 130);
@@ -857,13 +1062,6 @@ h1::after
         margin-bottom: 1rem;
     }
 
-    .paid-social
-    {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
 
 // Section 9 - "Strategi"
 .strategi
@@ -930,7 +1128,18 @@ h1::after
             background-color: #212121;
             position: relative;
             box-shadow: 0 0 6px 2px #000000;
-            
+            transition: ease-in-out 120ms;
+
+            &:hover
+            {
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.539);
+    
+                .image
+                {
+                       opacity: 0.8;
+                }
+            }
+
 
             .text-container
             {
@@ -945,6 +1154,7 @@ h1::after
         {
             width: 100%;
             opacity: 0.6;
+            transition: opacity ease-in-out 120ms;
         }
 }
 

@@ -13,11 +13,31 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
+    padding-block: 2rem;
   }
   .header {
     gap: 3rem;
     padding-inline: 1.5rem;
     padding-block: 0.5rem;
+  }
+  #menu {
+    z-index: 3;
+    padding-block: 2rem;
+    text-align: center;
+  }
+  #ul-menu {
+    list-style-type: none;
+    margin: 0;
+  }
+  li {
+    font-size: 1.5rem;
+    margin-block: 0.5rem;
+    padding: 0.5rem;
+    transition: ease-in-out 120ms;
+  }
+  li:hover {
+    background-color: rgba(144, 144, 144, 0.5137254902);
+    box-shadow: 0 0 12px 0 rgba(144, 144, 144, 0.7058823529);
   }
   .main {
     display: flex;
@@ -29,7 +49,12 @@ body {
     height: auto;
     color: rgb(255, 255, 255);
     position: relative;
-    padding-top: 3rem;
+    padding-block: 3rem;
+  }
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .image-main {
     width: 100%;
@@ -91,11 +116,26 @@ body {
   .simplify-optimize {
     padding-block: 4rem;
   }
+  .simplify-optimize h1::after {
+    display: none;
+  }
   .mobil-circle {
     bottom: 0;
     right: -2%;
     width: 20rem;
     height: 20rem;
+  }
+  #something {
+    display: none;
+  }
+  #social {
+    display: none;
+  }
+  #search {
+    display: none;
+  }
+  #app {
+    display: none;
   }
 }
 @media (min-width: 1200px) {
@@ -105,6 +145,17 @@ body {
     width: 100%;
     position: fixed;
     z-index: 3;
+  }
+  #menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+    padding-inline: 12rem;
+    padding-block: 2rem;
+  }
+  #li-menu {
+    display: none;
   }
   .container {
     width: 100%;
@@ -184,6 +235,9 @@ body {
     height: 22rem;
     top: 20%;
   }
+  .simplify-optimize h1::after {
+    display: none;
+  }
   .container.head {
     display: flex;
     flex-direction: column;
@@ -250,6 +304,10 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 0;
+    transition: transform ease-in-out 200ms;
+  }
+  .download .image-box:hover {
+    transform: scale(1.1);
   }
   .download .image-box .image {
     border: solid 5px #3b3b3b;
@@ -405,6 +463,19 @@ h1::after {
   line-height: 0;
 }
 
+#overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2588235294);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms;
+}
+#overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
 .header {
   background-color: rgba(0, 0, 0, 0.956);
   color: white;
@@ -442,6 +513,69 @@ h1::after {
 }
 .header .fa-solid.fa-bars:hover {
   transform: scale(1.2) rotate(10deg);
+}
+.header #menu {
+  background-color: #252525;
+  height: auto;
+  width: 100vw;
+  position: fixed;
+  border-radius: 1rem;
+  top: -100%;
+  left: 0;
+  transition: top 300ms;
+}
+.header #menu a {
+  text-decoration: none;
+}
+.header #menu .content-contaier .menu-headlines {
+  font-size: 1.5rem;
+  font-weight: 600;
+  -webkit-text-decoration: underline 2px white;
+          text-decoration: underline 2px white;
+  text-underline-offset: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.header #menu .content-contaier .menu-headlines::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  bottom: -7px;
+  height: 2px;
+  background-color: #ffffff;
+}
+.header #menu .content-contaier p {
+  margin-left: 2.5rem;
+  font-size: 0.9rem;
+}
+.header #menu .content-contaier i {
+  margin-right: 1.2rem;
+}
+.header #menu .content-contaier h6 {
+  font-size: 1.2rem;
+}
+.header #menu .content-contaier .text-container {
+  padding-bottom: 0.5rem;
+  transition: ease-in-out 200ms;
+}
+.header #menu .content-contaier .text-container:hover {
+  transform: scale(1.03);
+}
+.header #menu .paid-social {
+  margin-left: 3rem;
+}
+.header #menu #app h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.header #menu.open {
+  top: 6.5%;
+}
+.header #toggle-menu {
+  background-color: transparent;
+  border: none;
+  color: white;
 }
 
 .main {
@@ -626,25 +760,29 @@ h1::after {
 .search .text-container:hover {
   transform: scale(1.08);
 }
-.search .fa-solid.fa-chart-line {
-  color: rgb(255, 130, 130);
-}
-.search .fa-solid.fa-chart-column {
-  color: rgb(90, 164, 255);
-}
-.search .fa-brands.fa-shopify {
-  color: rgb(1, 197, 76);
-  margin-right: 1.5rem;
-}
-.search .fa-brands.fa-facebook {
-  color: 0;
-  margin-right: 0.5rem;
-  margin-bottom: 1rem;
-}
 .search .paid-social {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.fa-solid.fa-chart-line {
+  color: rgb(255, 130, 130);
+}
+
+.fa-solid.fa-chart-column {
+  color: rgb(90, 164, 255);
+}
+
+.fa-brands.fa-shopify {
+  color: rgb(1, 197, 76);
+  margin-right: 1.5rem;
+}
+
+.fa-brands.fa-facebook {
+  color: 0;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .strategi {
@@ -693,6 +831,13 @@ h1::after {
   background-color: #212121;
   position: relative;
   box-shadow: 0 0 6px 2px #000000;
+  transition: ease-in-out 120ms;
+}
+.world .image-container:hover {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.539);
+}
+.world .image-container:hover .image {
+  opacity: 0.8;
 }
 .world .image-container .text-container {
   position: absolute;
@@ -703,6 +848,7 @@ h1::after {
 .world .image {
   width: 100%;
   opacity: 0.6;
+  transition: opacity ease-in-out 120ms;
 }
 
 .section-end .rectangle {
