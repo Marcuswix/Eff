@@ -3,6 +3,9 @@
 body
 {
     background: linear-gradient(to left, #0f263ef0, #071820, #031113, #071820, #0f263ef1);
+    position: relative;
+    padding: 0;
+    margin: 0; 
 }
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) 
@@ -30,7 +33,7 @@ body
 
     #menu
     {
-        z-index: 3;
+        z-index: 6;
         padding-block: 2rem;
         text-align: center;
     }
@@ -302,6 +305,7 @@ body
         justify-content: center;
         text-align: center;
         padding-block: 2rem;
+        width: 100%;
 
         .content-container
         {
@@ -311,7 +315,7 @@ body
 
         .image-container
         {
-            width: 23rem;
+            width: 20rem;
             display: block;
             margin: auto;
             padding-top: 4rem;
@@ -629,6 +633,34 @@ h1::after
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    #btn-top
+    {
+        background-color: #ffffffd9;
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+        border: none;
+        box-shadow: 0 0px 4px 1px rgba(234, 234, 234, 0.891);
+        opacity: 1;
+        z-index: 10;
+        position: fixed;
+        bottom: 3%;
+        right: 3%;
+        transition: background-color ease-in-out 200ms, box-shadow ease-in-out 200ms, margin ease-in-out 200ms;
+
+        &:hover
+        {
+            background-color: #eeeeeee7;
+            box-shadow: 0 0px 10px 1px rgba(239, 239, 239, 0.857);
+            margin-bottom: 0.1rem;
+        }
+    }
+
+    .btn-top-hide
+    {
+        opacity: 0 !important;
+    }
 
     #logo-container
     {
